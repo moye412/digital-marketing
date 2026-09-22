@@ -1,0 +1,2162 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>برنامج التسويق الرقمي | مكين للتدريب والاستشارات</title>
+
+    <meta name="description"
+        content="برنامج تدريبي تطبيقي في التسويق الرقمي من فهم السوق والجمهور إلى بناء استراتيجية تسويقية قابلة للتنفيذ.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+        /* ========================================
+           الألوان
+        ======================================== */
+
+        :root {
+            --navy: #414B7A;
+            --navy-dark: #30395F;
+
+            --gold: #D7AD4B;
+            --gold-dark: #BA8E31;
+
+            --bg: #F9F9F6;
+            --bg-soft: #F3F2ED;
+
+            --white: #FFFFFF;
+
+            --text: #242734;
+            --text-soft: #6D7180;
+
+            --border: rgba(65, 75, 122, 0.11);
+
+            --shadow:
+                0 20px 60px rgba(35, 40, 65, 0.09);
+        }
+
+
+        /* ========================================
+           عام
+        ======================================== */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Tajawal", sans-serif;
+
+            background: var(--bg);
+            color: var(--text);
+
+            line-height: 1.85;
+
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: min(1160px, calc(100% - 40px));
+            margin: auto;
+        }
+
+        .section {
+            padding: 95px 0;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: var(--navy-dark);
+            line-height: 1.45;
+        }
+
+        h2 {
+            font-size: clamp(28px, 4vw, 42px);
+        }
+
+        .section-title {
+            max-width: 720px;
+            margin: 0 auto 52px;
+
+            text-align: center;
+        }
+
+        .section-title h2 {
+            margin-bottom: 14px;
+        }
+
+        .section-title p {
+            color: var(--text-soft);
+            font-size: 17px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 8px 15px;
+
+            border-radius: 999px;
+
+            background: rgba(215, 173, 75, .13);
+            border: 1px solid rgba(215, 173, 75, .24);
+
+            color: var(--gold-dark);
+
+            font-size: 14px;
+            font-weight: 700;
+
+            margin-bottom: 17px;
+        }
+
+
+        /* ========================================
+           الأزرار
+        ======================================== */
+
+        .btn {
+            min-height: 56px;
+
+            padding: 0 27px;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 10px;
+
+            border-radius: 14px;
+
+            font-size: 16px;
+            font-weight: 700;
+
+            transition: .3s ease;
+        }
+
+        .btn svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .btn-primary {
+            background: var(--navy);
+            color: white;
+
+            box-shadow:
+                0 15px 35px rgba(65, 75, 122, .22);
+        }
+
+        .btn-primary:hover {
+            background: var(--navy-dark);
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+
+            color: var(--navy);
+
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: white;
+        }
+
+
+        /* ========================================
+           Navbar
+        ======================================== */
+
+        .navbar {
+            position: absolute;
+
+            top: 0;
+            right: 0;
+
+            width: 100%;
+
+            padding: 24px 0;
+
+            z-index: 30;
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 30px;
+        }
+
+        .logo img {
+            width: 190px;
+        }
+
+        .nav-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            min-height: 48px;
+
+            padding: 0 22px;
+
+            border-radius: 13px;
+
+            background: rgba(255, 255, 255, .85);
+            border: 1px solid var(--border);
+
+            color: var(--navy);
+
+            font-size: 14px;
+            font-weight: 700;
+
+            backdrop-filter: blur(12px);
+
+            transition: .3s ease;
+        }
+
+        .nav-button:hover {
+            color: white;
+            background: var(--navy);
+        }
+
+
+        /* ========================================
+           Hero
+        ======================================== */
+
+        .hero {
+            position: relative;
+
+            min-height: 790px;
+
+            display: flex;
+            align-items: center;
+
+            padding: 155px 0 85px;
+
+            background:
+
+                radial-gradient(
+                    circle at 88% 17%,
+                    rgba(215, 173, 75, .15),
+                    transparent 27%
+                ),
+
+                radial-gradient(
+                    circle at 10% 90%,
+                    rgba(65, 75, 122, .08),
+                    transparent 32%
+                ),
+
+                var(--bg);
+        }
+
+        .hero::before {
+            content: "";
+
+            position: absolute;
+
+            top: 75px;
+            left: -260px;
+
+            width: 470px;
+            height: 470px;
+
+            border-radius: 50%;
+
+            border:
+                1px solid rgba(65, 75, 122, .08);
+        }
+
+        .hero-grid {
+            display: grid;
+
+            grid-template-columns:
+                1.05fr .95fr;
+
+            gap: 75px;
+
+            align-items: center;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+        }
+
+        .hero h1 {
+            max-width: 700px;
+
+            font-size: clamp(39px, 5.5vw, 67px);
+
+            letter-spacing: -2px;
+
+            margin-bottom: 24px;
+        }
+
+        .hero h1 span {
+            color: var(--gold-dark);
+        }
+
+        .hero-description {
+            max-width: 680px;
+
+            color: var(--text-soft);
+
+            font-size: 18px;
+            line-height: 2;
+
+            margin-bottom: 32px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            margin-bottom: 33px;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 17px;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+
+            gap: 9px;
+
+            color: var(--text-soft);
+
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .meta-icon {
+            width: 34px;
+            height: 34px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 10px;
+
+            background:
+                rgba(215, 173, 75, .15);
+
+            color: var(--gold-dark);
+
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+
+        /* صورة الهيرو */
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .hero-image {
+            position: relative;
+
+            height: 570px;
+
+            overflow: hidden;
+
+            border-radius:
+                34px 34px 92px 34px;
+
+            box-shadow:
+                0 35px 90px rgba(37, 42, 70, .17);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+        .hero-image::after {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(40, 46, 77, .42),
+                    transparent 52%
+                );
+        }
+
+        .floating-card {
+            position: absolute;
+
+            left: -30px;
+            bottom: 50px;
+
+            z-index: 5;
+
+            width: 220px;
+
+            padding: 19px;
+
+            border-radius: 20px;
+
+            background:
+                rgba(255, 255, 255, .93);
+
+            border:
+                1px solid rgba(255, 255, 255, .85);
+
+            backdrop-filter: blur(20px);
+
+            box-shadow: var(--shadow);
+        }
+
+        .floating-card strong {
+            display: block;
+
+            color: var(--navy);
+
+            font-size: 31px;
+
+            line-height: 1.1;
+
+            margin-bottom: 6px;
+        }
+
+        .floating-card span {
+            color: var(--text-soft);
+
+            font-size: 14px;
+        }
+
+        .hero-dots {
+            position: absolute;
+
+            right: -35px;
+            top: 40px;
+
+            width: 110px;
+            height: 110px;
+
+            background-image:
+                radial-gradient(
+                    var(--gold) 2px,
+                    transparent 2px
+                );
+
+            background-size: 16px 16px;
+
+            opacity: .7;
+        }
+
+
+        /* ========================================
+           ماذا ستتعلم؟
+        ======================================== */
+
+        .features {
+            background: white;
+        }
+
+        .cards-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 18px;
+        }
+
+        .feature-card {
+            padding: 30px 25px;
+
+            border-radius: 21px;
+
+            background: var(--bg);
+
+            border: 1px solid var(--border);
+
+            transition: .3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-7px);
+
+            background: white;
+
+            box-shadow: var(--shadow);
+        }
+
+        .icon-box {
+            width: 56px;
+            height: 56px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 16px;
+
+            margin-bottom: 22px;
+
+            background:
+                rgba(65, 75, 122, .09);
+
+            color: var(--navy);
+        }
+
+        .icon-box svg {
+            width: 26px;
+            height: 26px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 10px;
+
+            font-size: 19px;
+        }
+
+        .feature-card p {
+            color: var(--text-soft);
+
+            font-size: 15px;
+        }
+
+
+        /* ========================================
+           التطبيق العملي
+        ======================================== */
+
+        .experience-grid {
+            display: grid;
+
+            grid-template-columns:
+                .9fr 1.1fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+        .big-number {
+            position: relative;
+
+            min-height: 365px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            overflow: hidden;
+
+            border-radius: 32px;
+
+            background: var(--navy);
+        }
+
+        .big-number::before {
+            content: "";
+
+            position: absolute;
+
+            width: 270px;
+            height: 270px;
+
+            top: -155px;
+            left: -90px;
+
+            border-radius: 50%;
+
+            background: var(--gold);
+        }
+
+        .big-number::after {
+            content: "";
+
+            position: absolute;
+
+            width: 190px;
+            height: 190px;
+
+            right: -60px;
+            bottom: -70px;
+
+            border-radius: 50%;
+
+            border:
+                1px solid rgba(255,255,255,.18);
+        }
+
+        .number-content {
+            position: relative;
+            z-index: 3;
+
+            text-align: center;
+
+            color: white;
+        }
+
+        .number-content strong {
+            display: block;
+
+            color: white;
+
+            font-size: 95px;
+
+            line-height: 1;
+        }
+
+        .number-content span {
+            color:
+                rgba(255, 255, 255, .75);
+
+            font-size: 17px;
+        }
+
+        .experience-content > p {
+            color: var(--text-soft);
+
+            font-size: 17px;
+
+            margin: 17px 0 30px;
+        }
+
+        .check-list {
+            display: grid;
+
+            gap: 14px;
+        }
+
+        .check-item {
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 12px;
+
+            padding-bottom: 15px;
+
+            border-bottom:
+                1px solid rgba(65, 75, 122, .08);
+        }
+
+        .check-icon {
+            flex: 0 0 27px;
+
+            width: 27px;
+            height: 27px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 50%;
+
+            background:
+                rgba(215, 173, 75, .18);
+
+            color: var(--gold-dark);
+
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+
+        /* ========================================
+           المخرجات
+        ======================================== */
+
+        .outputs {
+            background: var(--bg-soft);
+        }
+
+        .output-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 14px;
+        }
+
+        .output-item {
+            display: flex;
+            align-items: center;
+
+            gap: 13px;
+
+            padding: 19px 20px;
+
+            background: white;
+
+            border: 1px solid var(--border);
+
+            border-radius: 15px;
+
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .output-dot {
+            width: 9px;
+            height: 9px;
+
+            flex: 0 0 9px;
+
+            border-radius: 50%;
+
+            background: var(--gold);
+        }
+
+
+        /* ========================================
+           الجمهور
+        ======================================== */
+
+        .audience-box {
+            padding: 60px;
+
+            border-radius: 30px;
+
+            background: white;
+
+            border: 1px solid var(--border);
+
+            box-shadow: var(--shadow);
+        }
+
+        .audience-items {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 14px;
+
+            margin-top: 36px;
+        }
+
+        .audience-item {
+            padding: 18px;
+
+            border-radius: 14px;
+
+            background: var(--bg);
+
+            color: var(--navy-dark);
+
+            text-align: center;
+
+            font-weight: 600;
+        }
+
+
+        /* ========================================
+           المدرب
+        ======================================== */
+
+        .trainer-section {
+            position: relative;
+
+            overflow: hidden;
+
+            background: white;
+        }
+
+        .trainer-section::before {
+            content: "";
+
+            position: absolute;
+
+            width: 500px;
+            height: 500px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(215, 173, 75, .07);
+
+            right: -250px;
+            top: 100px;
+        }
+
+        .trainer-grid {
+            position: relative;
+            z-index: 2;
+
+            display: grid;
+
+            grid-template-columns:
+                .85fr 1.15fr;
+
+            gap: 80px;
+
+            align-items: center;
+        }
+
+        .trainer-visual {
+            position: relative;
+
+            min-height: 530px;
+
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+
+            border-radius: 34px;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #F5F4EF,
+                    #ECEAE2
+                );
+        }
+
+        .trainer-visual::before {
+            content: "";
+
+            position: absolute;
+
+            width: 300px;
+            height: 300px;
+
+            top: 65px;
+            left: 50%;
+
+            transform:
+                translateX(-50%);
+
+            border-radius: 50%;
+
+            background:
+                rgba(215, 173, 75, .15);
+        }
+
+        .trainer-visual::after {
+            content: "";
+
+            position: absolute;
+
+            width: 190px;
+            height: 190px;
+
+            top: 22px;
+            right: -70px;
+
+            border-radius: 50%;
+
+            border:
+                1px solid rgba(65, 75, 122, .1);
+        }
+
+        .trainer-image {
+            position: relative;
+
+            z-index: 3;
+
+            width: 96%;
+            height: 510px;
+
+            object-fit: contain;
+            object-position: bottom;
+        }
+
+        .trainer-badge {
+            position: absolute;
+
+            z-index: 6;
+
+            bottom: 25px;
+            right: 25px;
+
+            padding: 12px 17px;
+
+            background:
+                rgba(255, 255, 255, .92);
+
+            backdrop-filter: blur(15px);
+
+            border-radius: 13px;
+
+            color: var(--navy);
+
+            font-size: 14px;
+            font-weight: 700;
+
+            box-shadow: var(--shadow);
+        }
+
+        .trainer-content h2 {
+            margin-bottom: 8px;
+
+            font-size:
+                clamp(30px, 4vw, 45px);
+        }
+
+        .trainer-title {
+            color: var(--gold-dark);
+
+            font-size: 18px;
+            font-weight: 700;
+
+            margin-bottom: 25px;
+        }
+
+        .trainer-bio {
+            color: var(--text-soft);
+
+            font-size: 17px;
+
+            line-height: 2.05;
+
+            margin-bottom: 28px;
+        }
+
+        .trainer-specialties {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 10px;
+        }
+
+        .trainer-tag {
+            display: inline-flex;
+            align-items: center;
+
+            padding: 9px 14px;
+
+            border-radius: 999px;
+
+            background:
+                rgba(65, 75, 122, .07);
+
+            border:
+                1px solid rgba(65, 75, 122, .09);
+
+            color: var(--navy);
+
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+
+        /* ========================================
+           CTA
+        ======================================== */
+
+        .cta {
+            padding: 35px 0 95px;
+        }
+
+        .cta-box {
+            position: relative;
+
+            overflow: hidden;
+
+            padding: 75px 45px;
+
+            border-radius: 35px;
+
+            background: var(--navy);
+
+            text-align: center;
+
+            color: white;
+        }
+
+        .cta-box::before,
+        .cta-box::after {
+            content: "";
+
+            position: absolute;
+
+            border-radius: 50%;
+
+            border:
+                1px solid rgba(255, 255, 255, .1);
+        }
+
+        .cta-box::before {
+            width: 330px;
+            height: 330px;
+
+            right: -170px;
+            top: -150px;
+        }
+
+        .cta-box::after {
+            width: 230px;
+            height: 230px;
+
+            left: -100px;
+            bottom: -140px;
+        }
+
+        .cta-box h2 {
+            position: relative;
+            z-index: 2;
+
+            color: white;
+
+            margin-bottom: 13px;
+        }
+
+        .cta-box p {
+            position: relative;
+            z-index: 2;
+
+            max-width: 640px;
+
+            margin: auto;
+
+            color:
+                rgba(255, 255, 255, .75);
+
+            font-size: 17px;
+        }
+
+        .cta-box .btn {
+            position: relative;
+            z-index: 2;
+
+            margin-top: 29px;
+
+            background: var(--gold);
+
+            color: var(--navy-dark);
+        }
+
+        .cta-box .btn:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+
+        /* ========================================
+           Footer
+        ======================================== */
+
+        footer {
+            padding: 35px 0;
+
+            border-top:
+                1px solid rgba(65,75,122,.08);
+        }
+
+        .footer-inner {
+            display: flex;
+
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 30px;
+        }
+
+        .footer-logo {
+            width: 150px;
+        }
+
+        footer p {
+            color: var(--text-soft);
+
+            font-size: 13px;
+        }
+
+
+        /* ========================================
+           زر واتساب العائم
+        ======================================== */
+
+        .whatsapp-float {
+            position: fixed;
+
+            left: 25px;
+            bottom: 25px;
+
+            z-index: 99;
+
+            width: 58px;
+            height: 58px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 50%;
+
+            background: #25D366;
+
+            color: white;
+
+            box-shadow:
+                0 10px 30px rgba(37, 211, 102, .3);
+
+            transition: .3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform:
+                translateY(-4px)
+                scale(1.04);
+        }
+
+        .whatsapp-float svg {
+            width: 29px;
+            height: 29px;
+        }
+
+
+        /* ========================================
+           Responsive
+        ======================================== */
+
+        @media (max-width: 950px) {
+
+            .hero-grid,
+            .experience-grid,
+            .trainer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content {
+                text-align: center;
+            }
+
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-actions,
+            .hero-meta {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                max-width: 620px;
+                width: 100%;
+
+                margin: auto;
+            }
+
+            .cards-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .output-grid,
+            .audience-items {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .trainer-grid {
+                gap: 50px;
+            }
+
+            .trainer-visual {
+                max-width: 570px;
+                width: 100%;
+
+                margin: auto;
+            }
+
+        }
+
+
+        @media (max-width: 620px) {
+
+            .container {
+                width:
+                    min(100% - 28px, 1160px);
+            }
+
+            .section {
+                padding: 68px 0;
+            }
+
+            .navbar {
+                padding-top: 18px;
+            }
+
+            .logo img {
+                width: 138px;
+            }
+
+            .nav-button {
+                min-height: 42px;
+
+                padding: 0 14px;
+
+                font-size: 12px;
+            }
+
+            .hero {
+                min-height: auto;
+
+                padding:
+                    125px 0 65px;
+            }
+
+            .hero-grid {
+                gap: 45px;
+            }
+
+            .hero h1 {
+                font-size: 39px;
+
+                letter-spacing: -1px;
+            }
+
+            .hero-description {
+                font-size: 16px;
+            }
+
+            .hero-actions .btn {
+                width: 100%;
+            }
+
+            .hero-meta {
+                gap: 10px;
+            }
+
+            .hero-image {
+                height: 420px;
+
+                border-radius:
+                    26px 26px 65px 26px;
+            }
+
+            .floating-card {
+                left: 15px;
+                bottom: 20px;
+
+                width: 185px;
+            }
+
+            .cards-grid,
+            .output-grid,
+            .audience-items {
+                grid-template-columns: 1fr;
+            }
+
+            .audience-box {
+                padding: 38px 22px;
+            }
+
+            .big-number {
+                min-height: 300px;
+            }
+
+            .number-content strong {
+                font-size: 78px;
+            }
+
+            .trainer-visual {
+                min-height: 430px;
+            }
+
+            .trainer-image {
+                height: 420px;
+            }
+
+            .trainer-content {
+                text-align: center;
+            }
+
+            .trainer-specialties {
+                justify-content: center;
+            }
+
+            .cta-box {
+                padding: 55px 23px;
+
+                border-radius: 25px;
+            }
+
+            .cta-box .btn {
+                width: 100%;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+
+                text-align: center;
+            }
+
+            .whatsapp-float {
+                width: 53px;
+                height: 53px;
+
+                left: 18px;
+                bottom: 18px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ========================================
+     Navbar
+======================================== -->
+
+<nav class="navbar">
+
+    <div class="container nav-inner">
+
+        <a href="#" class="logo">
+
+            <img
+                src="logo.png"
+                alt="مكين للتدريب والاستشارات">
+
+        </a>
+
+
+        <a
+            href="#register"
+            class="nav-button">
+
+            التسجيل في البرنامج
+
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- ========================================
+     Hero
+======================================== -->
+
+<header class="hero">
+
+    <div class="container hero-grid">
+
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                برنامج تدريبي تطبيقي
+            </div>
+
+
+            <h1>
+
+                من الحضور الرقمي
+
+                إلى
+
+                <span>
+                    استراتيجية تسويقية
+                </span>
+
+                قابلة للتنفيذ
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                رحلة تدريبية متكاملة تساعدك على الانتقال
+                من النشاط الرقمي العشوائي إلى تسويق أكثر
+                وضوحًا وفاعلية؛ بدءًا من فهم السوق والجمهور،
+                وصولًا إلى المحتوى والحملات وقياس النتائج.
+
+            </p>
+
+
+            <div class="hero-actions">
+
+                <a
+                    href="https://wa.me/967783111465?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D8%A7%D9%84%D8%AA%D8%B3%D8%AC%D9%8A%D9%84%20%D9%81%D9%8A%20%D8%AF%D9%88%D8%B1%D8%A9%20%D8%A7%D9%84%D8%AA%D8%B3%D9%88%D9%8A%D9%82%20%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A"
+                    target="_blank"
+                    rel="noopener"
+                    class="btn btn-primary">
+
+                    التسجيل والاستفسار عبر واتساب
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2">
+
+                        <path d="M19 12H5"></path>
+                        <path d="M12 19l-7-7 7-7"></path>
+
+                    </svg>
+
+                </a>
+
+
+                <a
+                    href="#learn"
+                    class="btn btn-secondary">
+
+                    استكشف البرنامج
+
+                </a>
+
+            </div>
+
+
+            <div class="hero-meta">
+
+                <div class="meta-item">
+
+                    <span class="meta-icon">
+                        ✓
+                    </span>
+
+                    تدريب تطبيقي
+
+                </div>
+
+
+                <div class="meta-item">
+
+                    <span class="meta-icon">
+                        70%
+                    </span>
+
+                    تطبيق عملي
+
+                </div>
+
+
+                <div class="meta-item">
+
+                    <span class="meta-icon">
+                        4
+                    </span>
+
+                    أيام تدريبية
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="hero-visual">
+
+            <div class="hero-dots"></div>
+
+
+            <div class="hero-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=85"
+                    alt="التسويق الرقمي وتحليل الأداء">
+
+            </div>
+
+
+            <div class="floating-card">
+
+                <strong>
+                    70%+
+                </strong>
+
+                <span>
+                    من البرنامج يعتمد على التطبيق العملي
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- ========================================
+     ماذا ستتعلم؟
+======================================== -->
+
+<section
+    class="section features"
+    id="learn">
+
+    <div class="container">
+
+
+        <div class="section-title">
+
+            <div class="eyebrow">
+                رحلة تعلم متكاملة
+            </div>
+
+            <h2>
+                ماذا ستتعلم خلال البرنامج؟
+            </h2>
+
+            <p>
+                منهج عملي يبدأ من فهم السوق والجمهور
+                وينتهي بخطة تسويق رقمي واضحة وقابلة للتنفيذ.
+            </p>
+
+        </div>
+
+
+
+        <div class="cards-grid">
+
+
+            <article class="feature-card">
+
+                <div class="icon-box">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8">
+
+                        <circle cx="12" cy="8" r="4"></circle>
+
+                        <path
+                            d="M4 21c0-4 3.6-7 8-7s8 3 8 7">
+                        </path>
+
+                    </svg>
+
+                </div>
+
+                <h3>
+                    السوق والجمهور
+                </h3>
+
+                <p>
+                    فهم السوق وبناء شخصية العميل
+                    وتحديد الاحتياجات والسلوك بصورة أكثر دقة.
+                </p>
+
+            </article>
+
+
+
+            <article class="feature-card">
+
+                <div class="icon-box">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8">
+
+                        <circle cx="12" cy="12" r="9"></circle>
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <circle cx="12" cy="12" r="1"></circle>
+
+                    </svg>
+
+                </div>
+
+                <h3>
+                    الاستراتيجية
+                </h3>
+
+                <p>
+                    صياغة القيمة والرسائل التسويقية
+                    وبناء استراتيجية تسويق رقمي واضحة.
+                </p>
+
+            </article>
+
+
+
+            <article class="feature-card">
+
+                <div class="icon-box">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8">
+
+                        <path d="M4 5h16v14H4z"></path>
+                        <path d="M8 9h8"></path>
+                        <path d="M8 13h5"></path>
+
+                    </svg>
+
+                </div>
+
+                <h3>
+                    المحتوى والحملات
+                </h3>
+
+                <p>
+                    تخطيط وصناعة المحتوى وبناء الحملات
+                    الرقمية والاستهداف بصورة أكثر فاعلية.
+                </p>
+
+            </article>
+
+
+
+            <article class="feature-card">
+
+                <div class="icon-box">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8">
+
+                        <path d="M4 19V9"></path>
+                        <path d="M10 19V5"></path>
+                        <path d="M16 19v-7"></path>
+                        <path d="M22 19H2"></path>
+
+                    </svg>
+
+                </div>
+
+                <h3>
+                    القياس والتحسين
+                </h3>
+
+                <p>
+                    قراءة مؤشرات الأداء وتحليل النتائج
+                    وتحويل البيانات إلى قرارات تطويرية.
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================
+     التطبيق العملي
+======================================== -->
+
+<section class="section">
+
+    <div class="container experience-grid">
+
+
+        <div class="big-number">
+
+            <div class="number-content">
+
+                <strong>
+                    70%
+                </strong>
+
+                <span>
+                    تطبيق عملي
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="experience-content">
+
+            <div class="eyebrow">
+                تعلم بالممارسة
+            </div>
+
+            <h2>
+                لن تكتفي بالمفاهيم النظرية
+            </h2>
+
+            <p>
+
+                يعتمد البرنامج على منهجية تطبيقية تحاكي
+                بيئة العمل الفعلية، لتتمكن من تحويل المعرفة
+                مباشرة إلى أدوات ومخرجات قابلة للاستخدام.
+
+            </p>
+
+
+            <div class="check-list">
+
+
+                <div class="check-item">
+
+                    <span class="check-icon">
+                        ✓
+                    </span>
+
+                    <span>
+                        تطبيقات وتمارين على حالات ومشاريع حقيقية.
+                    </span>
+
+                </div>
+
+
+                <div class="check-item">
+
+                    <span class="check-icon">
+                        ✓
+                    </span>
+
+                    <span>
+                        استخدام عملي لأدوات الذكاء الاصطناعي في التسويق.
+                    </span>
+
+                </div>
+
+
+                <div class="check-item">
+
+                    <span class="check-icon">
+                        ✓
+                    </span>
+
+                    <span>
+                        تغذية راجعة تساعدك على تطوير مخرجاتك.
+                    </span>
+
+                </div>
+
+
+                <div class="check-item">
+
+                    <span class="check-icon">
+                        ✓
+                    </span>
+
+                    <span>
+                        قوالب وأدوات قابلة للاستخدام بعد انتهاء التدريب.
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================
+     المخرجات
+======================================== -->
+
+<section class="section outputs">
+
+    <div class="container">
+
+
+        <div class="section-title">
+
+            <div class="eyebrow">
+                مخرجات عملية
+            </div>
+
+            <h2>
+                ماذا ستخرج به؟
+            </h2>
+
+            <p>
+
+                ستخرج من البرنامج بمجموعة من الأدوات
+                والمخرجات التسويقية الجاهزة للتطوير
+                والاستخدام في عملك أو مشروعك.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="output-grid">
+
+            <div class="output-item">
+                <span class="output-dot"></span>
+                استراتيجية تسويق رقمي
+            </div>
+
+            <div class="output-item">
+                <span class="output-dot"></span>
+                شخصية العميل ورحلته
+            </div>
+
+            <div class="output-item">
+                <span class="output-dot"></span>
+                القيمة والرسائل التسويقية
+            </div>
+
+            <div class="output-item">
+                <span class="output-dot"></span>
+                تقويم وأفكار للمحتوى
+            </div>
+
+            <div class="output-item">
+                <span class="output-dot"></span>
+                تصور لحملة رقمية
+            </div>
+
+            <div class="output-item">
+                <span class="output-dot"></span>
+                إطار لمؤشرات الأداء
+            </div>
+
+            <div class="output-item">
+                <span class="output-dot"></span>
+                خطة عمل تسويقية
+            </div>
+
+            <div class="output-item">
+                <span class="output-dot"></span>
+                أدوات للذكاء الاصطناعي
+            </div>
+
+            <div class="output-item">
+                <span class="output-dot"></span>
+                مشروع تطبيقي نهائي
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================
+     الجمهور المستهدف
+======================================== -->
+
+<section class="section">
+
+    <div class="container">
+
+
+        <div class="audience-box">
+
+
+            <div
+                class="section-title"
+                style="margin-bottom:0">
+
+                <div class="eyebrow">
+                    لمن البرنامج؟
+                </div>
+
+                <h2>
+                    صُمم لمن يريد تطوير أدائه التسويقي
+                </h2>
+
+                <p>
+
+                    سواء كنت تعمل داخل مؤسسة أو تدير
+                    مشروعك الخاص، يساعدك البرنامج على
+                    بناء ممارسة تسويقية أكثر تنظيمًا وفاعلية.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="audience-items">
+
+                <div class="audience-item">
+                    مسؤولو التسويق والاتصال
+                </div>
+
+                <div class="audience-item">
+                    أصحاب المشاريع ورواد الأعمال
+                </div>
+
+                <div class="audience-item">
+                    صناع المحتوى
+                </div>
+
+                <div class="audience-item">
+                    مسؤولو التواصل الاجتماعي
+                </div>
+
+                <div class="audience-item">
+                    العاملون في المنظمات
+                </div>
+
+                <div class="audience-item">
+                    الإعلام والاتصال الرقمي
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================
+     المدرب
+======================================== -->
+
+<section class="section trainer-section">
+
+    <div class="container trainer-grid">
+
+
+        <div class="trainer-visual">
+
+            <img
+                src="trainer.png"
+                alt="المدرب سالم سعيد سالم باجليده"
+                class="trainer-image">
+
+            <div class="trainer-badge">
+                مدرب البرنامج
+            </div>
+
+        </div>
+
+
+
+        <div class="trainer-content">
+
+            <div class="eyebrow">
+                تعرّف على المدرب
+            </div>
+
+
+            <h2>
+                سالم سعيد سالم باجليده
+            </h2>
+
+
+            <div class="trainer-title">
+
+                مدرب واستشاري في التسويق الرقمي
+                وتطوير المنتجات وبناء القدرات
+
+            </div>
+
+
+            <p class="trainer-bio">
+
+                متخصص في التسويق الرقمي وبناء الاستراتيجيات
+                التسويقية، ويمتلك خبرة في تصميم وتنفيذ البرامج
+                التدريبية وبناء القدرات المؤسسية، إلى جانب تخصصه
+                في التسويق بالمحتوى والعلامات التجارية والإعلانات
+                الرقمية، وخبرته في تطوير المنتجات والخدمات وتحويل
+                الأفكار إلى فرص سوقية.
+
+            </p>
+
+
+            <div class="trainer-specialties">
+
+                <span class="trainer-tag">
+                    استراتيجيات التسويق الرقمي
+                </span>
+
+                <span class="trainer-tag">
+                    التسويق بالمحتوى
+                </span>
+
+                <span class="trainer-tag">
+                    الإعلانات الرقمية
+                </span>
+
+                <span class="trainer-tag">
+                    بناء العلامات التجارية
+                </span>
+
+                <span class="trainer-tag">
+                    تطوير المنتجات
+                </span>
+
+                <span class="trainer-tag">
+                    بناء القدرات
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================
+     CTA
+======================================== -->
+
+<section
+    class="cta"
+    id="register">
+
+    <div class="container">
+
+        <div class="cta-box">
+
+
+            <h2>
+                جاهز لتطوير مهاراتك في التسويق الرقمي؟
+            </h2>
+
+
+            <p>
+
+                تواصل معنا الآن لمعرفة موعد البرنامج،
+                الرسوم، مكان التدريب وكافة تفاصيل التسجيل.
+
+            </p>
+
+
+            <a
+                href="https://wa.me/967783111465?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D8%A7%D9%84%D8%AA%D8%B3%D8%AC%D9%8A%D9%84%20%D9%81%D9%8A%20%D8%AF%D9%88%D8%B1%D8%A9%20%D8%A7%D9%84%D8%AA%D8%B3%D9%88%D9%8A%D9%82%20%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A"
+                target="_blank"
+                rel="noopener"
+                class="btn">
+
+                التسجيل والاستفسار عبر واتساب
+
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2">
+
+                    <path d="M19 12H5"></path>
+                    <path d="M12 19l-7-7 7-7"></path>
+
+                </svg>
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================
+     Footer
+======================================== -->
+
+<footer>
+
+    <div class="container footer-inner">
+
+
+        <img
+            src="logo.png"
+            alt="مكين للتدريب والاستشارات"
+            class="footer-logo">
+
+
+        <p>
+            © مكين للتدريب والاستشارات — جميع الحقوق محفوظة
+        </p>
+
+
+    </div>
+
+</footer>
+
+
+
+<!-- ========================================
+     WhatsApp Floating Button
+======================================== -->
+
+<a
+    href="https://wa.me/967783111465?text=%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D8%A7%D9%84%D8%AA%D8%B3%D8%AC%D9%8A%D9%84%20%D9%81%D9%8A%20%D8%AF%D9%88%D8%B1%D8%A9%20%D8%A7%D9%84%D8%AA%D8%B3%D9%88%D9%8A%D9%82%20%D8%A7%D9%84%D8%B1%D9%82%D9%85%D9%8A"
+    target="_blank"
+    rel="noopener"
+    class="whatsapp-float"
+    aria-label="التواصل عبر واتساب">
+
+    <svg
+        viewBox="0 0 32 32"
+        fill="currentColor">
+
+        <path d="M16.04 2.003c-7.73 0-14.02 6.285-14.02 14.013 0 2.47.645 4.88 1.87 7.002L1.9 30.28l7.43-1.95a13.97 13.97 0 0 0 6.71 1.708h.006c7.728 0 14.014-6.285 14.014-14.014 0-3.744-1.458-7.264-4.105-9.91a13.92 13.92 0 0 0-9.915-4.111zm0 25.67h-.005a11.62 11.62 0 0 1-5.93-1.623l-.425-.252-4.41 1.157 1.177-4.298-.277-.442a11.62 11.62 0 0 1-1.78-6.2c0-6.423 5.227-11.65 11.655-11.65 3.11 0 6.034 1.212 8.233 3.412a11.57 11.57 0 0 1 3.415 8.238c-.002 6.426-5.228 11.658-11.653 11.658zm6.39-8.72c-.35-.175-2.07-1.02-2.39-1.137-.32-.117-.555-.175-.788.175-.233.35-.905 1.137-1.108 1.37-.204.234-.408.263-.758.088-.35-.175-1.477-.544-2.814-1.735-1.04-.927-1.742-2.072-1.946-2.422-.204-.35-.022-.54.153-.714.158-.157.35-.408.525-.612.175-.204.233-.35.35-.583.116-.234.058-.438-.03-.613-.087-.175-.787-1.896-1.079-2.596-.283-.682-.57-.59-.787-.601-.204-.01-.438-.012-.671-.012-.234 0-.613.087-.934.437-.32.35-1.225 1.196-1.225 2.917 0 1.72 1.254 3.384 1.429 3.617.175.233 2.468 3.769 5.98 5.285.835.36 1.487.575 1.995.736.838.266 1.601.228 2.204.138.672-.1 2.07-.846 2.362-1.663.292-.817.292-1.517.204-1.663-.087-.146-.32-.233-.67-.408z">
+
+        </path>
+
+    </svg>
+
+</a>
+
+
+</body>
+</html>
